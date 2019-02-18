@@ -1,5 +1,5 @@
 # Custom-KAY
-This repository contains code developed to streamline the analysis of ultrasound systems/images, in part to complete assignments for BME 844 (Advanced Ultrasonic Imaging, Spring 2019, Prof. Gregg Trahey) at Duke University.
+This repository contains code developed by Keita A. Yokoyama to streamline the analysis of ultrasound systems and images in MATLAB. This repository has been created, in part, to complete assignments for BME 844 (Advanced Ultrasonic Imaging, Spring 2019, Prof. Gregg Trahey) at Duke University, and make my code available for others.
 
 All code was developed with MATLAB R2017b and Field II 3.24 on a MacBook Pro 2016 (Retina/Touchbar).
 
