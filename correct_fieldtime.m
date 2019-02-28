@@ -23,8 +23,10 @@ function terror=correct_fieldtime(spec,varargin)
 %       type = transducer type
 %              FORMAT: string (default: 'linear')
 %                NOTE: currently only accepts 'linear' and 'focusedlinear'
-%        way = 1- or 2-way time-of-flight for echo?
-%              FORMAT: 1 (to OR from transducer) or 2 (to AND from)
+%
+%        way = echo's time-of-flight is 1- or 2-way
+%              FORMAT: 1 (to/from transducer) or 2 (to AND from; default)
+%
 % OUTPUT:
 %     terror = time between Field start time and true focal region
 %              FORMAT: scalar double
@@ -46,7 +48,7 @@ function terror=correct_fieldtime(spec,varargin)
     fdepth=spec.focus(3); eheight=spec.elemheight; c=spec.c; dt=1/spec.fs;
     exci=spec.impexc;      resp=spec.impresp;
 
-% shift for elevational lens
+% correct for average height of elevational lens' curvature
     if strcmp(type,'focusedlinear')
          lensshift=( sqrt(fdepth.^2+(eheight/2).^2) - fdepth )*2/c;
     else,lensshift=0;

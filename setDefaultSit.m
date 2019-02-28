@@ -10,7 +10,7 @@ function spec=setDefaultSit
 %
 % Created 2019-02-23 by Keita A. Yokoyama
 
-f0=5E6; bw=0.75; N=128; fdepth=40E-3; Fnum=5; exclength=0.5;
+f0=5E6; bw=0.75; N=128; fdepth=40E-3; Fnum=[]; exclength=0.5;
 
 % ---define wave properties
 c=1540;lambda=c/f0;
@@ -18,7 +18,7 @@ c=1540;lambda=c/f0;
 % ---define transducer constants
 focus=[0 0 fdepth];    fs=f0*20;
 elempitch=lambda/2;    angsens=45;    elemhght=10E-3;
-elemwidth=lambda/(pi*sind(angsens));   elemkerf=elempitch-elemwidth;
+elemwidth=lambda/(pi*sind(angsens));  elemkerf=elempitch-elemwidth;
 
 % ---define simulation/image properties
 nscat=21;%scatterers per resolution cell
@@ -30,7 +30,7 @@ exc=sin( 2*pi*f0*( 0:1/fs:exclength/f0 ) );
 % --save settings in struct
 spec.f0=f0;  spec.fs=fs;  spec.bw=bw;  spec.Nelem=N;  spec.Fnum=Fnum;
 spec.c=c;  spec.lambda=lambda;  spec.fdepth=fdepth;   spec.focus=focus;
-spec.elemwidth=elemwidth;        spec.elemheight=elemhght;
+spec.elemwidth=elemwidth;       spec.elemheight=elemhght;
 spec.elempitch=elempitch;       spec.elemkerf=elemkerf;
 spec.lim_axi=lim_axi;           spec.lim_lat=lim_lat;     spec.nscat=nscat;
 spec.impexc=exc;                spec.impresp=impresp;
